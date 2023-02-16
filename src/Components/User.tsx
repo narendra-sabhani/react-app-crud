@@ -3,8 +3,14 @@ import { Add } from "@mui/icons-material";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import DataTable from "react-data-table-component";
 import { UsersList } from '../AppData/DummyRecords';
+import { useDispatch, useSelector } from "react-redux";
 
 const User = () => {
+
+    const dispatch = useDispatch();
+
+    const { entities } = useSelector((state: any) => state.users);
+
     const columns = [
         {
             name: 'Name',
@@ -42,7 +48,7 @@ const User = () => {
             </div>
             <DataTable
                 columns={columns}
-                data={UsersList}
+                data={entities}
                 pagination
             />
         </>
