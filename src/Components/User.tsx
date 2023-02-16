@@ -1,6 +1,6 @@
 import React from "react"
 import { Add } from "@mui/icons-material";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Link, Typography } from "@mui/material";
 import DataTable from "react-data-table-component";
 import { UsersList } from '../AppData/DummyRecords';
 import { useDispatch, useSelector } from "react-redux";
@@ -32,7 +32,7 @@ const User = () => {
 
     return (
         <>
-        <div style={{paddingTop:"1rem", paddingLeft:"1.5rem"}}>
+        <div style={{padding:"1rem"}}>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2}>
                     <Grid xs={2}>
@@ -40,7 +40,7 @@ const User = () => {
                     </Grid>
                     <Grid xs={10} >
                         <Button variant="outlined" startIcon={<Add />} style={{marginRight:"1rem", float:"right"}}>
-                            Add
+                        <Link href="/addUser">Add</Link> 
                         </Button>
                     </Grid>
                 </Grid>
