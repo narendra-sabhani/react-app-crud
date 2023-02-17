@@ -10,7 +10,7 @@ const User = () => {
 
     const dispatch = useDispatch();
 
-    const { entities } = useSelector((state: any) => state.users);
+    const  users  = useSelector((state: any) => state.user.users);
 
     const columns = [
         {
@@ -49,7 +49,7 @@ const User = () => {
             </div>
             <DataTable
                 columns={columns}
-                data={entities}
+                data={users}
                 pagination
             />
         </>

@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "redux/store/store/store.ts", "redux/actions/actions.ts", "redux/slices/userSlice.ts"  ]
 }
