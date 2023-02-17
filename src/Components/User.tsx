@@ -1,9 +1,10 @@
 import React from "react"
 import { Add } from "@mui/icons-material";
-import { Box, Button, Grid, Link, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import DataTable from "react-data-table-component";
 import { UsersList } from '../AppData/DummyRecords';
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const User = () => {
 
@@ -40,7 +41,7 @@ const User = () => {
                     </Grid>
                     <Grid xs={10} >
                         <Button variant="outlined" startIcon={<Add />} style={{marginRight:"1rem", float:"right"}}>
-                        <Link href="/addUser">Add</Link> 
+                        <Link to="/addUser">Add</Link> 
                         </Button>
                     </Grid>
                 </Grid>
