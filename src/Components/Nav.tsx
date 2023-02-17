@@ -1,4 +1,4 @@
-import {MenuSharp } from "@mui/icons-material";
+import { MenuSharp } from "@mui/icons-material";
 import { AppBar, Box, Button, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -26,9 +26,11 @@ export default function DrawerAppBar(props: any) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item.text} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-            <Link to={item.href}>{item.text}</Link>
-            </ListItemButton>
+            <Link to={item.href} style={{ textDecoration: "none" }}>
+              <ListItemButton sx={{ textAlign: "center" }}>
+                {item.text}
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>
@@ -42,7 +44,7 @@ export default function DrawerAppBar(props: any) {
   };
 
   return (
-    <Box sx={{ display: "flex", margin:"1rem" }}>
+    <Box sx={{ display: "flex", margin: "1rem" }}>
       <CssBaseline />
       <AppBar component="nav">
         <Toolbar>
@@ -64,9 +66,11 @@ export default function DrawerAppBar(props: any) {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item.text} sx={{ color: '#fff' }}>
-                <Link to={item.href}>{item.text}</Link>
-              </Button>
+              <Link to={item.href} style={{textDecoration:"none"}}>
+                <Button key={item.text} sx={{ color: '#fff' }}>
+                  {item.text}
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
@@ -92,7 +96,7 @@ export default function DrawerAppBar(props: any) {
         </Drawer>
       </Box>
       <Box component="main" sx={{ p: 3 }}>
-        
+
       </Box>
     </Box>
   );

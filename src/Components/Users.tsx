@@ -37,9 +37,9 @@ const Users = () => {
                             <Typography variant="h4">Users List</Typography>
                         </Grid>
                         <Grid xs={10} >
-                            <Button variant="outlined" startIcon={<Add />} style={{ marginRight: "1rem", float: "right" }}>
-                                <Link to="/addUser">Add</Link>
-                            </Button>
+                            <Link to="/addUser" style={{ textDecoration: "none" }}>
+                                <Button variant="outlined" startIcon={<Add />} style={{ marginRight: "1rem", float: "right" }}>Add</Button>
+                            </Link>
                         </Grid>
                     </Grid>
                 </Box>
