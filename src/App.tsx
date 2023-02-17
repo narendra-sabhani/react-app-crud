@@ -5,6 +5,7 @@ import { Router } from './Router'
 import Home from './Components/Home';
 import User from './Components/Users';
 import AddUser from './Components/AddUser';
+import EditUser from './Components/EditUser';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/user' element={<User />} />
         <Route path='/addUser' element={<AddUser />} />
+        <Route path='/user/:id/edit' element={<EditUser />} />
       </Routes>
 
       {/* <RouterProvider router={Router} /> */}
