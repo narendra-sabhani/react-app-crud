@@ -37,9 +37,11 @@ const Users = () => {
             name: 'Actions',
             cell: (row: any) => (
                 <>
-                    <IconButton color="primary" aria-label="add to shopping cart">
-                        <Update />
-                    </IconButton>
+                     <Link to={`/user/${row.id}/edit`} style={{ textDecoration: "none" }}>
+                        <IconButton color="primary" aria-label="add to shopping cart">
+                            <Update />
+                        </IconButton>
+                    </Link>
                     <IconButton color="primary" aria-label="add to shopping cart" onClick={() => handleDelete(row)}>
                         <Delete />
                     </IconButton>

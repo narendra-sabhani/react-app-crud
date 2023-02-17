@@ -1,11 +1,35 @@
 import { Box, Button, TextField } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { createUser } from "../redux/slices/userSlice";
+import { useNavigate, useParams } from "react-router-dom";
+import { updateUser } from "../redux/slices/userSlice";
 
 
 export default function EditUser() {
+
+    const params = useParams();
+    const dispatch = useDispatch();
+
+    const [user, setUser] = useState(
+        {
+            name: "",
+            id: "",
+            username: "",
+            email: "",
+            phone: ""
+        });
+
+    const users = useSelector((state: any) => state.user.users);
+
+    useEffect(() => {
+        let user = users.find((u: any) => u.id == params.id);
+        setUser(user);
+        console.log("user", user);
+        setEmail(user.email);
+        setName(user.name);
+        setUserName(user.username);
+    }, []);
+
     const [name, setName] = useState("");
     const [nameError, setNameError] = useState({
         error: false,
@@ -24,15 +48,14 @@ export default function EditUser() {
 
     const newUserId = useSelector((state: any) => state.user.users.length);
 
-    const dispatch = useDispatch();
     let navigate = useNavigate();
 
     const createUserOnClick = () => {
         let error = validate();
         if (error) {
             dispatch(
-                createUser({
-                    id: newUserId + 1,
+                updateUser({
+                    id: parseInt(user.id),
                     name: name,
                     username: userName,
                     email: email
@@ -181,3 +204,5 @@ export default function EditUser() {
         </>
     )
 }
+
+
