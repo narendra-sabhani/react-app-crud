@@ -2,15 +2,12 @@ import React from "react"
 import { Add } from "@mui/icons-material";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import DataTable from "react-data-table-component";
-import { UsersList } from '../AppData/DummyRecords';
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-const User = () => {
+const Users = () => {
 
-    const dispatch = useDispatch();
-
-    const  users  = useSelector((state: any) => state.user.users);
+    const users = useSelector((state: any) => state.user.users);
 
     const columns = [
         {
@@ -33,19 +30,19 @@ const User = () => {
 
     return (
         <>
-        <div style={{padding:"1rem"}}>
-            <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={2}>
-                    <Grid xs={2}>
-                        <Typography variant="h4">Users List</Typography>
+            <div style={{ padding: "1rem" }}>
+                <Box sx={{ flexGrow: 1 }}>
+                    <Grid container spacing={2}>
+                        <Grid xs={2}>
+                            <Typography variant="h4">Users List</Typography>
+                        </Grid>
+                        <Grid xs={10} >
+                            <Button variant="outlined" startIcon={<Add />} style={{ marginRight: "1rem", float: "right" }}>
+                                <Link to="/addUser">Add</Link>
+                            </Button>
+                        </Grid>
                     </Grid>
-                    <Grid xs={10} >
-                        <Button variant="outlined" startIcon={<Add />} style={{marginRight:"1rem", float:"right"}}>
-                        <Link to="/addUser">Add</Link> 
-                        </Button>
-                    </Grid>
-                </Grid>
-            </Box>
+                </Box>
             </div>
             <DataTable
                 columns={columns}
@@ -54,7 +51,6 @@ const User = () => {
             />
         </>
     )
+};
 
-}
-
-export default User;
+export default Users;
