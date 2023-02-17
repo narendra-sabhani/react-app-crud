@@ -66,7 +66,7 @@ export default function DrawerAppBar(props: any) {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Link to={item.href} style={{textDecoration:"none"}}>
+              <Link to={item.href} style={{ textDecoration: "none" }}>
                 <Button key={item.text} sx={{ color: '#fff' }}>
                   {item.text}
                 </Button>
@@ -96,7 +96,6 @@ export default function DrawerAppBar(props: any) {
         </Drawer>
       </Box>
       <Box component="main" sx={{ p: 3 }}>
-
       </Box>
     </Box>
   );

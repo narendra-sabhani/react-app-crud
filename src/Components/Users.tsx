@@ -38,7 +38,7 @@ const Users = () => {
                         </Grid>
                         <Grid xs={10} >
                             <Link to="/addUser" style={{ textDecoration: "none" }}>
-                                <Button variant="outlined" startIcon={<Add />} style={{ marginRight: "1rem", float: "right" }}>Add</Button>
+                                <Button variant="contained" startIcon={<Add />} style={{ marginRight: "1rem", float: "right" }}>Add</Button>
                             </Link>
                         </Grid>
                     </Grid>
