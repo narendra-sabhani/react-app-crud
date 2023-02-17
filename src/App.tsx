@@ -6,6 +6,7 @@ import Home from './Components/Home';
 import User from './Components/Users';
 import AddUser from './Components/AddUser';
 import EditUser from './Components/EditUser';
+import UploadDownload from './Components/UploadDownload';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/user' element={<User />} />
         <Route path='/addUser' element={<AddUser />} />
         <Route path='/user/:id/edit' element={<EditUser />} />
+        <Route path='/upload' element={<UploadDownload />} />
       </Routes>
 
       {/* <RouterProvider router={Router} /> */}
