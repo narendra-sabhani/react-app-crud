@@ -26,13 +26,13 @@ const UploadDownload = () => {
     }
     const handleOnDownload = (e: any) => {
         console.log("open", file)
-        window.open(file.data.Url);
+        window.open(`http://localhost:8081/api/download/${file.name}`);
     }
 
     const onFileUpload = (e: any) => {
         const formData = new FormData();
         formData.append("myFile",e.target.files[0]);
-    
+        setFile(e.target.files[0]);
        
         axios.post("http://localhost:8081/api/uploadfile", formData, {
           headers: {
