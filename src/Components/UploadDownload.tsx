@@ -5,13 +5,7 @@ import React, { useState } from "react";
 const UploadDownload = () => {
 
     let formData = new FormData();
-    const [file, setFile] = useState<any>({})
-        ; const onFileUploadChange = (e: any) => {
-            console.log(" e.target.files[0]", e.target.files[0]);
-            if (e.target && e.target.files[0]) {
-                formData.append('file', e.target.files[0])
-            }
-        }
+    const [file, setFile] = useState<any>({}); 
 
     const handleOnSubmit = () => {
         console.log("formData", formData);
@@ -39,16 +33,16 @@ const UploadDownload = () => {
             "content-type": "multipart/form-data",
 
           },
-        }); //I need to change this line
+        });
       };
 
     return (
         <>
-            <div style={{ paddingTop: "10px" }}>
+            <div style={{ paddingTop: "10px", textAlign:"center" }}>
                 <Button
                     variant="contained"
                     component="label"
-                    style={{ marginRight: "3px" }}
+                    style={{ marginRight: "16px" }}
                 >
                     Choose File
                     <input
